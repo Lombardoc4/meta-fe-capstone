@@ -4,8 +4,6 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -36,6 +34,12 @@ a:hover {
   --color-secondary2: #FBDABB;
   --color-highlight: #EDEFEE;
   --color-highlight2: #333333;
+
+  --shadow: 0 0.5rem 1rem -0.75rem var(--color-black);
+
+
+  color: var(--color-black);
+  /* background-color: #242424; */
 }
 
 #root {
@@ -77,11 +81,34 @@ a:hover {
   text-decoration: underline;
 }
 
+button {
+  background-color: var(--color-primary2);
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  box-shadow:var(--shadow);
+  border: none;
+  height: fit-content;
+  width: fit-content;
+}
+
 ul {
   list-style-type: none;
   padding-inline-start: 0;
 }
 
+
+
+.img-container {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.img-container img {
+    width: 100%;
+    height: auto;
+
+}
 
 .display {
   font-family: 'Markazi Text', serif;
@@ -114,9 +141,11 @@ ul {
   font-weight: 700;
   font-size: 18px;
 }
+
 p {
   font-family: 'Karla', sans-serif;
   font-size: 16px;
+  line-height: 1.5;
 }
 
 .highlight {
@@ -182,12 +211,51 @@ p {
   padding-block: 4rem;
 }
 
+.flex {
+  display: flex;
+}
 
+header .img-container {
+  max-height: 360px;
+  margin-bottom: -8rem;
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+}
+
+footer li {
+  padding-block: 0.25rem;
+}
 
 #about {
   background-color: var(--color-primary2);
-  color: var(--color-primary)
 }
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 1rem;
+  background-color: var(--color-highlight);
+  box-shadow: var(--shadow);
+}
+
+.card .img-container {
+  max-height: 170px;
+}
+
+.card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem 1rem;
+}
+
+.card-content a {
+  margin-top: auto;
+}
+
 
 
 @media (min-width: 768px) {
@@ -206,6 +274,14 @@ p {
   }
   .flex-row {
     flex-direction: row;
+  }
+
+  .between {
+    justify-content: space-between;
+  }
+
+  .align-center {
+    align-items: center;
   }
 
 }

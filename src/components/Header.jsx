@@ -1,18 +1,23 @@
+import { Link } from "react-router-dom";
+import FoodImg from '../assets/restauranfood.jpg'
 
 const Header = () => {
 
     return  <header>
-        <div className="container spacer-lg">
-            <div className="col-6">
+        <div className="container spacer-lg" >
+            <div className="col-6 flex-col between flex">
+                <div>
                 <h1 className="display">Little Lemon</h1>
                 <h2 className="subtitle">Chicago</h2>
+                </div>
                 <p>We are a family owned and operated Mediterranean restaurant, focused on traditional recipes served with a modern twist </p>
                 <button className="specials">
-                    Reserve a Table
+                    <Link to="/booking">Reserve a Table</Link>
                 </button>
             </div>
-
-            <img className="col-6" src="/Logo.svg" alt="Antipasta board" />
+            <div className="col-6 img-container">
+                <img src={FoodImg} alt="Antipasta board" />
+            </div>
 
         </div>
 
