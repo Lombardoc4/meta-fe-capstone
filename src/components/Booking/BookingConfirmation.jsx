@@ -43,10 +43,10 @@ export const BookingConfirmation = () => {
 
 
             <div className='flex between spacer-md'>
-                <button className='specials'>
+                <button aria-label="On Click" className='specials'>
                     <Link to='#menu'>View Menu</Link>
                 </button>
-                <button className='specials'>
+                <button aria-label="On Click" className='specials'>
                     <Link to='/'>Home</Link>
                 </button>
             </div>

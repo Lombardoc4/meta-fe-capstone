@@ -6,7 +6,9 @@ const Nav = () => {
 
     return (
         <header className='container spacer-sm'>
-            <img src={"/Logo.svg"} />
+            <Link to='/'>
+                <img src={"/Logo.svg"} />
+            </Link>
             <nav>
                 <ul>
                     <li>
