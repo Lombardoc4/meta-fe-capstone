@@ -3,8 +3,6 @@
   line-height: 1;
   font-weight: 400;
 
-  color-scheme: light dark;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -47,6 +45,7 @@ a:hover {
 }
 
 nav {
+  flex: 1;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -61,7 +60,7 @@ nav ul {
 
 }
 
-header {
+#hero {
   background-color: var(--color-primary);
   color: var(--color-white)
 }
@@ -91,12 +90,33 @@ button {
   width: fit-content;
 }
 
+button.active {
+  background-color: var(--color-white);
+  color: var(--color-primary)
+}
+
 ul {
   list-style-type: none;
   padding-inline-start: 0;
 }
 
+input, select {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+}
 
+input.error, select.error {
+  outline: 2px solid var(--color-secondary);
+}
+
+.error-msg {
+  color: var(--color-secondary)
+}
+
+label, form button[type="submit"] {
+  margin-top: 1rem;
+}
 
 .img-container {
   display: flex;
@@ -215,7 +235,7 @@ p {
   display: flex;
 }
 
-header .img-container {
+#hero .img-container {
   max-height: 360px;
   margin-bottom: -8rem;
   border-radius: 1rem;
@@ -228,6 +248,15 @@ footer li {
 
 #about {
   background-color: var(--color-primary2);
+}
+
+#bookingPage {
+  min-height: 60vh;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  background-color: var(--color-primary);
+  color: var(--color-white)
 }
 
 .card {
@@ -256,6 +285,9 @@ footer li {
   margin-top: auto;
 }
 
+.between {
+  justify-content: space-between;
+}
 
 
 @media (min-width: 768px) {
@@ -276,9 +308,7 @@ footer li {
     flex-direction: row;
   }
 
-  .between {
-    justify-content: space-between;
-  }
+
 
   .align-center {
     align-items: center;
@@ -311,18 +341,4 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
-
-*/
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  /* a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  } */
 }

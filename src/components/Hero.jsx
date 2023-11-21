@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import FoodImg from '../assets/restauranfood.jpg'
 
-const Header = () => {
+const Hero = () => {
 
-    return  <header>
+    return  (
+    <section id="hero">
         <div className="container spacer-lg" >
             <div className="col-6 flex-col between flex">
                 <div>
@@ -21,8 +22,8 @@ const Header = () => {
 
         </div>
 
-    </header>
-
+    </section>
+    )
 }
 
-export default Header;
+export default Hero;

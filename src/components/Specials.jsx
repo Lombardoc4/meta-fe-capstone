@@ -35,7 +35,7 @@ export const Specials = () => {
 
                 <div className='container'>
                     {SpecialData.map((item) => (
-                        <div className='col-4'>
+                        <div key={item.title} className='col-4'>
                             <SpecialCard {...item} />
                         </div>
                     ))}

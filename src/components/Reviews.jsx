@@ -31,7 +31,7 @@ export const Reviews = () => {
 
                 <div className='container'>
                     {ReviewData.map((review) => (
-                        <div className='col-3'>
+                        <div key={review.name} className='col-3'>
                             <ReviewCard {...review} />
                         </div>
                     ))}
