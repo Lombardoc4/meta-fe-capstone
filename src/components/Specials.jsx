@@ -30,7 +30,7 @@ export const Specials = () => {
         <section className='spacer-lg'>
                 <div className='spacer-sm container between align-center col-12 spacer-sm'>
                     <h2 className='display'>Specials</h2>
-                    <button className='specials'>Online Menu</button>
+                    <button aria-label="On Click" className='specials'>Online Menu</button>
                 </div>
 
                 <div className='container'>

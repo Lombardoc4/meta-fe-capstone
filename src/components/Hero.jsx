@@ -12,7 +12,7 @@ const Hero = () => {
                 <h2 className="subtitle">Chicago</h2>
                 </div>
                 <p>We are a family owned and operated Mediterranean restaurant, focused on traditional recipes served with a modern twist </p>
-                <button className="specials">
+                <button aria-label="On Click" className="specials">
                     <Link to="/booking">Reserve a Table</Link>
                 </button>
             </div>

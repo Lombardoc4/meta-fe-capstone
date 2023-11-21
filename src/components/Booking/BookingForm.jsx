@@ -14,7 +14,7 @@ const BookingOccasions = [
 
 const occasionRegex = new RegExp(BookingOccasions.join('|'), 'g')
 
-export const BookingForm = () => {
+export const BookingForm = ({updateLS}) => {
     const navigate = useNavigate();
     const [times, setTimes] = useState([]);
 
@@ -27,6 +27,7 @@ export const BookingForm = () => {
     const submitForm = (data) => {
         const res = submitAPI( data );
         if (res) {
+            updateLS(data);
             window.localStorage.setItem('little-lemon-res', JSON.stringify(data));
             navigate('./confirmation');
         } else {
@@ -89,6 +90,7 @@ export const BookingForm = () => {
                     <div data-testid={"time-table"} className='flex' style={{ flexWrap: "wrap", gap: "1rem" }}>
                         {times.map((time) => (
                             <button
+                            aria-label="On Click"
                                 key={time}
                                 type='button'
                                 data-testid={time}
@@ -136,7 +138,7 @@ export const BookingForm = () => {
                 </select>
                 <div className='error-msg'>{formik.touched.occasion && formik.errors.occasion}</div>
 
-                <button className='specials' type='submit' data-testid='submit'>
+                <button aria-label="On Click" className='specials' type='submit' data-testid='submit'>
                     Make Your reservation
                 </button>
             </form>

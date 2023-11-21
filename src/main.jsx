@@ -8,6 +8,8 @@ import HomePage from './components/HomePage.jsx'
 import { BookingConfirmation } from './components/Booking/BookingConfirmation.jsx'
 import { BookingForm } from './components/Booking/BookingForm.jsx'
 
+const updateLS = (data) => window.localStorage.setItem('little-lemon-res', JSON.stringify(data));
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
@@ -16,7 +18,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
           <Route index element={<HomePage/>}/>
           <Route path="/booking" element={<BookingPage/>}>
-            <Route index element={<BookingForm/>}/>
+            <Route index element={<BookingForm updateLS={updateLS}/>}/>
             <Route path="/booking/confirmation" element={<BookingConfirmation/>}/>
           </Route>
         </Route>

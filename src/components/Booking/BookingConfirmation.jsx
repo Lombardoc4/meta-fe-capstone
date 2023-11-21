@@ -28,7 +28,7 @@ export const BookingConfirmation = () => {
         return (
             <div className='container align-center' style={{ display: "grid", gap: "2rem" }}>
                 <h1 className="display">No booking to confirm</h1>
-                <button className="specials">
+                <button aria-label="On Click" className="specials">
                     <Link to="/booking">Make a reservation now</Link>
                 </button>
             </div>
